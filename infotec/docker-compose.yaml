@@ -1,12 +1,3 @@
-# Md́oulo 5
-
-Laravel y API REST
-
-## 1. Instalación de MySQL y Laravel
-
-Se crea el archivo **docker-compose.yaml** con la configuracion de MySQL y Laravel
-
-```yaml
 services:
   mariadb:
     image: 'bitnami/mariadb:latest'
@@ -45,20 +36,3 @@ volumes:
 networks:
   laravel-network:
     driver: bridge
-```
-
-## 2. Construir los contenedores
-
-Se crean los contenedores y se levanta el servidor de **laravel**
-
-```bash
-docker compose up --build -d
-```
-
-## 3. Detener los contendores
-
-Para detener los contenderos se utiliza el siguiente comando
-
-```bash
-docker compose down
-```
