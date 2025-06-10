@@ -55,10 +55,26 @@ Se crean los contenedores y se levanta el servidor de **laravel**
 docker compose up --build -d
 ```
 
-## 3. Detener los contendores
+## 3. Detener los contenedores
 
 Para detener los contenderos se utiliza el siguiente comando
 
 ```bash
 docker compose down
+```
+
+## 4. Verificar los contenedores
+
+Con el comando ps se puede verficiar el estatus de los contenedores
+
+```bash
+docker compose ps
+```
+
+## 5. Conectarse al contenedor
+
+Con el siguiente comando se accede al contenedor creado a traves de la terminal
+
+```bash
+docker compose exec application bash
 ```
