@@ -71,10 +71,73 @@ Con el comando ps se puede verficiar el estatus de los contenedores
 docker compose ps
 ```
 
+Otra forma de verificar el estado de los contenedores 
+
+```bash
+docker container ls -a
+```
+
 ## 5. Conectarse al contenedor
 
 Con el siguiente comando se accede al contenedor creado a traves de la terminal
 
 ```bash
 docker compose exec application bash
+```
+
+## 6. Iniciar los contenedores nuevamente
+
+Con el siguiente comando se levantan nuevamente los contenedores
+
+```bash
+docker compose up -d
+```
+
+# API REST
+
+## 1. Listar eventos
+
+```bash
+curl http://localhost:8000/api/eventos
+```
+
+
+## 2. Agregar un nuevo evento
+
+```bash
+curl -X POST http://localhost:8000/api/eventos \
+  -H "Content-Type: application/json" \
+  -d '{
+    "titulo": "Escuela Pública de Código",
+    "descripcion": "Inicia oficialmente el curso de Bases tecnológicas en el servicio público",
+    "fecha_inicio": "2025-01-01",
+    "fecha_fin": "2025-06-30",
+    "ubicacion": "En línea"
+  }'
+```
+
+## 3. Consultar evento
+
+```bash
+curl http://localhost:8000/api/eventos/1
+```
+
+## 4. Actualizar evento
+
+```bash
+curl -X PUT http://localhost:8000/api/eventos/1 \
+  -H "Content-Type: application/json" \
+  -d '{
+    "titulo": "Curso actualizado",
+    "descripcion": "Descripción modificada",
+    "fecha_inicio": "2025-02-01",
+    "fecha_fin": "2025-07-31",
+    "ubicacion": "Presencial"
+  }'
+```
+
+## 5. Borrar evento 
+
+```bash
+curl -X DELETE http://localhost:8000/api/eventos/1
 ```
