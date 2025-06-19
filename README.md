@@ -90,7 +90,7 @@ docker compose exec application bash
 Con el siguiente comando se levantan nuevamente los contenedores
 
 ```bash
-docker compose up -d
+  docker compose up -d
 ```
 
 # API REST
@@ -141,3 +141,4 @@ curl -X PUT http://localhost:8000/api/eventos/1 \
 ```bash
 curl -X DELETE http://localhost:8000/api/eventos/1
 ```
+
